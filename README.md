@@ -1,2 +1,15 @@
-# NodeJS_PerformanceEvaluation
-진행했던 내용을 복습차 다시 해보면서, 기억을 해봅시다
+# NodeJS P.E in GSM
+
+This repo is made for the purpose of performance evaluation in gsm
+
+## Support Git History
+
+### Credits
+
+Based on these amazing projects:
+
+- Liberty🌠 by [Jeong Hyeon Kim](https://github.com/des5141)
+
+## License
+
+MIT
