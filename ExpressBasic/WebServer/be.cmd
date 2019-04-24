@@ -1,0 +1,2 @@
+cd be
+npm start
