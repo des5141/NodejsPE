@@ -2,6 +2,8 @@
 
 This repo is made for the purpose of performance evaluation in gsm
 
+Let's [**Go to wiki !**](https://github.com/des5141/NodejsPE/wiki)
+
 ## Support Git History
 
 ### Credits
