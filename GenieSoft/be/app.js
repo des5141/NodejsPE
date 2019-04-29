@@ -72,10 +72,10 @@ mongoose.connect('mongodb://localhost:27017/local', { useNewUrlParser: true }, (
    if (err) return console.error(err)
    console.log('mongoose connected!')
 
-   //쓰기
-   User.create({ name: '하하' })
-       .then(r => console.log(r))
-        .catch(e => console.error(e))
+   // //쓰기
+   // User.create({ name: '하하' })
+   //     .then(r => console.log(r))
+   //      .catch(e => console.error(e))
 
    //읽기
    // User.find()
