@@ -21,16 +21,16 @@ const User = require('../../../models/users')
 
 module.exports = router;
 
-  //Restful
-  router.get('/', function(req, res, next) {
+//Restful
+router.get('/', function (req, res, next) {
 
-    User.find()
-      .then(r => {
-        res.send({ success : true, users: r})
-      })
-      .catch(e => {
-        res.send({ success : false})
-      })
+  User.find()
+    .then(r => {
+      res.send({ success: true, users: r })
+    })
+    .catch(e => {
+      res.send({ success: false })
+    })
 
   // console.log(req.query)
   // console.log(req.body)
@@ -42,13 +42,13 @@ router.post('/', (req, res, next) => {
 
   const { name, age } = req.body
   const u = new User({ name, age })
-    u.save()
-      .then(r => {
-        res.send({ success: true, msg: r })
-      })
-      .catch(e => {
-        res.send({ success: false, msg: e.message })
-      })
+  u.save()
+    .then(r => {
+      res.send({ success: true, msg: r })
+    })
+    .catch(e => {
+      res.send({ success: false, msg: e.message })
+    })
 
   // console.log(req.query)
   // console.log(req.body)
@@ -58,7 +58,7 @@ router.post('/', (req, res, next) => {
 router.put('/:id', (req, res, next) => {
   const id = req.params.id
   const { name, age } = req.body
-  User.updateOne({ _id: id }, { $set: { name, age }})
+  User.updateOne({ _id: id }, { $set: { name, age } })
     .then(r => {
       res.send({ success: true, msg: r })
     })
@@ -82,7 +82,7 @@ router.delete('/:id', (req, res, next) => {
 })
 
 
-router.all('*', function(req, res, next) {
+router.all('*', function (req, res, next) {
   next(createError(404, 'API를 찾을 수 없습니다.'));
 });
 

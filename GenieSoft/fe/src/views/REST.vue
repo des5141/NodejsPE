@@ -9,13 +9,17 @@
             <div>{{user.age}}</div>
           </div>
         </v-card-title>
+        <!-- 수정, 삭제 기능들
         <v-card-actions>
           <v-btn flat color="orange" @click="putDialog(user)">수정</v-btn>
           <v-btn flat color="error" @click="delUser(user._id)">삭제</v-btn>
-        </v-card-actions>
+        </v-card-actions> -->
       </v-card>
     </v-flex>
-    <!-- <v-flex xs12 sm3>
+
+
+    <!-- 예전에 만들었었던 것
+    <v-flex xs12 sm3>
         <v-card>
           <v-card-title primary-title>
             <div>
@@ -87,9 +91,13 @@
           </v-card-actions>
         </v-card>
       </v-flex> -->
+    
+    
     <v-btn absolute dark fab bottom right color="pink" @click="mdUp">
       <v-icon>add</v-icon>
     </v-btn>
+
+
   </v-layout>
 
   <v-dialog v-model="dialog" persistent max-width="500px">
@@ -128,6 +136,12 @@
 </v-container>
 </template>
 <script>
+
+
+
+
+
+
 import axios from 'axios'
 export default {
   data () {
