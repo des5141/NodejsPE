@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <style>
+        .textarea {
+            background-color: transparent;
+            border: 0;
+            overflow-x: hidden;
+            overflow-y: auto;
+            padding-top: 1;
+            padding-right: 5;
+            padding-bottom: 5;
+            padding-left: 5;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <textarea id="text_box" style="overflow:hidden;" rows="30" cols="50" readonly="readonly"></textarea>
+        <br /><br />
+    </div>
+
+    <div>
+        <form id="chatting">
+            <div>
+                name : <input id="name" type="text" onkeypress="if(event.keyCode==13) {send(); return false;}"><br />
+                message : <input id="msg" type="text" onkeypress="if(event.keyCode==13) {send(); return false;}">
+                <input type="button" value="send" onclick="send()"
+                    onkeypress="if(event.keyCode==13) {send(); return false;}" />
+            </div>
+        </form>
+    </div>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+        document.getElementById("text_box").value = "[ 환영합니다 ]"
+        var socket = io()
+        function send() {
+            if (document.getElementById("msg").value != "") {
+                socket.emit("receive", document.getElementById("name").value, document.getElementById("msg").value)
+                document.getElementById("msg").value = ""
+            }
+        }
+        socket.on("client_receive", (msg) => {
+            document.getElementById("text_box").value += "\n" + msg
+            document.getElementById("text_box").scrollTop = document.getElementById("text_box").scrollHeight
+        })
+    </script>
+</body>
+
+</html>
